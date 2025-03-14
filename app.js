@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import MainContainer from "./components/MainContainer";
 
 // React.createElement => Object => HTMLElement(render)
 const heading = React.createElement(
@@ -35,4 +36,24 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // root.render(heading);
 // root.render(jsxHeading);
-root.render(<HeadingComponent />);
+// root.render(<HeadingComponent />);
+
+/** Food Delivery App - Food (Healthy & Delicious)
+ * Header
+ *  - Logo
+ *  - Nav List
+ *    - Search
+ *    - Home
+ *    - Accout
+ *    - Cart
+ * Body
+ *  - RestaurantContainer
+ *    - ResturantCard
+ *      - Img
+ *      - Resturant Details - Name, Location, Cuisine, Delivery Time, Ratings
+ * Footer
+ *  - Copywrite disclaimers
+ *  - About Us
+ *  - Contact Us
+ */
+root.render(<MainContainer />);
