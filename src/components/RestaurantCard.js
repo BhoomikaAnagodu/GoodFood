@@ -1,5 +1,6 @@
 import React from "react";
-import RatingStar from "../assets/star.svg";
+import RatingStar from "../../assets/star.svg";
+import { IMG_CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
   const { cloudinaryImageId, name, avgRating, sla, cuisines, areaName } =
@@ -7,10 +8,7 @@ const RestaurantCard = ({ resData }) => {
   return (
     <div className="res-card">
       <div>
-        <img
-          src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
-          className="res-logo"
-        />
+        <img src={IMG_CDN_URL + cloudinaryImageId} className="res-logo" />
       </div>
       <div className="res-details">
         <p className="res-name">{name}</p>

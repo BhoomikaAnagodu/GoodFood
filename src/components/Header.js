@@ -1,18 +1,16 @@
 import React from "react";
-import Search from "../assets/search.svg";
-import Home from "../assets/home.svg";
-import Account from "../assets/account.svg";
-import Cart from "../assets/cart.svg";
+import Search from "../../assets/search.svg";
+import Home from "../../assets/home.svg";
+import Account from "../../assets/account.svg";
+import Cart from "../../assets/cart.svg";
+import { APP_LOGO } from "../utils/constants";
 
 const Header = () => {
   return (
     <header className="header-container">
       <div className="header">
         <div className="logo-container">
-          <img
-            src="https://t3.ftcdn.net/jpg/08/29/90/88/360_F_829908823_kYsRKdQcIaYEAhHRAZTIXuSKvuVPif8w.jpg"
-            className="logo"
-          />
+          <img src={APP_LOGO} className="logo" />
         </div>
         <div className="nav-items">
           <ul>
