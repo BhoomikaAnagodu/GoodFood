@@ -5,7 +5,9 @@ import Account from "../../assets/account.svg";
 import Cart from "../../assets/cart.svg";
 import { APP_LOGO } from "../utils/constants";
 
-const Header = () => {
+const Header = (props) => {
+  const { searchQuery, handleSearchInputChange } = props;
+
   return (
     <header className="header-container">
       <div className="header">
@@ -14,8 +16,14 @@ const Header = () => {
         </div>
         <div className="nav-items">
           <ul>
-            <li className="nav-list">
-              <Search className="nav-icon" /> <span>Search</span>
+            <li className="search-grid">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => handleSearchInputChange(e)}
+                className="search-input"
+              />
+              <Search className="search-icon" />
             </li>
             <li className="nav-list">
               <Home className="nav-icon" /> <span>Home</span>

@@ -8,12 +8,12 @@ const heading = React.createElement(
   { id: "heading" },
   "Namaste React 🚀"
 );
-console.log(heading);
+// console.log(heading);
 
 // JSX => HTML-like or XML-like syntax
 const jsxHeading = <h1>Namaste React from JSX</h1>;
 
-console.log(jsxHeading);
+// console.log(jsxHeading);
 
 // React Component
 const Title = () => <h2>React Component</h2>;
