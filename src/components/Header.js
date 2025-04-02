@@ -1,33 +1,37 @@
 import React from "react";
-import Search from "../../assets/search.svg";
 import Home from "../../assets/home.svg";
 import Account from "../../assets/account.svg";
 import Cart from "../../assets/cart.svg";
 import { APP_LOGO } from "../utils/constants";
+import { NavLink } from "react-router-dom";
 
-const Header = (props) => {
-  const { searchQuery, handleSearchInputChange } = props;
-
+const Header = () => {
   return (
     <header className="header-container">
       <div className="header">
         <div className="logo-container">
-          <img src={APP_LOGO} className="logo" />
+          <NavLink to="/">
+            <img src={APP_LOGO} className="logo" />
+          </NavLink>
         </div>
         <div className="nav-items">
           <ul>
-            <li className="search-grid">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => handleSearchInputChange(e)}
-                className="search-input"
-              />
-              <Search className="search-icon" />
-            </li>
-            <li className="nav-list">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                [isActive ? "active-nav-list" : "nav-list"].join(" ")
+              }
+            >
               <Home className="nav-icon" /> <span>Home</span>
-            </li>
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                [isActive ? "active-nav-list" : "nav-list"].join(" ")
+              }
+            >
+              <span>About Us</span>
+            </NavLink>
             <li className="nav-list">
               <Account className="nav-icon" /> <span>Account</span>
             </li>

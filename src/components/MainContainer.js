@@ -1,26 +1,12 @@
 import React from "react";
 import Header from "./Header";
-import RestaurantContainer from "./RestaurantContainer";
-import useMainContainer from "../hooks/useMainContainer";
+import { Outlet } from "react-router-dom";
 
 const MainContainer = () => {
-  const {
-    filteredRestList,
-    filterTopResturants,
-    searchQuery,
-    handleSearchInputChange,
-  } = useMainContainer();
-
   return (
     <div className="main-container">
-      <Header
-        searchQuery={searchQuery}
-        handleSearchInputChange={handleSearchInputChange}
-      />
-      <RestaurantContainer
-        filteredRestList={filteredRestList}
-        filterTopResturants={filterTopResturants}
-      />
+      <Header />
+      <Outlet />
     </div>
   );
 };

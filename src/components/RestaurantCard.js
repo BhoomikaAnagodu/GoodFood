@@ -1,12 +1,12 @@
 import React from "react";
-import RatingStar from "../../assets/star.svg";
+import RatingStar from "../../assets/star-in-circle.svg";
 import { IMG_CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
   const { cloudinaryImageId, name, avgRating, sla, cuisines, areaName } =
     resData.info;
   return (
-    <div className="res-card">
+    <>
       <div>
         <img src={IMG_CDN_URL + cloudinaryImageId} className="res-logo" />
       </div>
@@ -22,7 +22,7 @@ const RestaurantCard = ({ resData }) => {
         <p className="res-cuisines">{cuisines.toString()}</p>
         <p className="res-location">{areaName}</p>
       </div>
-    </div>
+    </>
   );
 };
 

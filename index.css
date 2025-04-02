@@ -56,6 +56,7 @@ p {
   cursor: pointer;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .nav-list:hover {
@@ -70,6 +71,19 @@ p {
 }
 
 .nav-list:hover > .nav-icon > path {
+  fill: #f06131 !important;
+}
+
+.active-nav-list {
+  padding: 0 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f06131;
+}
+
+.active-nav-list > .nav-icon > path {
   fill: #f06131 !important;
 }
 
@@ -90,6 +104,8 @@ p {
   cursor: pointer;
   flex: 1 0 21%;
   margin: 20px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .res-card:hover {
@@ -219,6 +235,11 @@ p {
   cursor: pointer;
 }
 
+.filter-section {
+  display: flex;
+  align-items: center;
+}
+
 .search-grid {
   display: flex;
   border: 1px solid #cecdcd;
@@ -242,4 +263,166 @@ p {
   height: 20px;
   object-fit: cover;
   padding-right: 5px;
+}
+
+.rest-detail-container {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.rest-detail-container > .rest-name {
+  font-size: 28px;
+  margin: 0;
+  padding: 20px 5px;
+}
+
+.rest-detail-popup-card {
+  border: 1px solid rgba(2, 6, 12, 0.15);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+}
+
+.rest-detail-popup-card > .ratings-cost {
+  display: flex;
+  align-items: center;
+}
+
+.rest-menu-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.menu-section-heading {
+  font-size: 18px;
+  margin: 0;
+}
+
+.menu-sub-section-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.menu-section-footer {
+  height: 15px;
+  background-color: #f0f0f0;
+  margin-bottom: 15px;
+}
+
+.menu-item-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 30px 0;
+  border-bottom: 1px solid #e6e5e5;
+}
+
+.menu-item-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.non-veg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.veg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-item-description {
+  margin: 8px 0;
+}
+
+.menu-item-price {
+  margin-bottom: 8px;
+}
+
+.menu-item-price > .price {
+  text-decoration: line-through;
+  color: rgba(2, 6, 12, 0.45);
+  padding-right: 4px;
+}
+
+.menu-item-review > .rating > .rating-star {
+  width: 10px;
+  height: 10px;
+}
+
+.menu-item-img {
+  width: 155px;
+  height: 145px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+details {
+  user-select: none;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(2, 6, 12, 0.1);
+}
+
+details > summary .collapse-arrow {
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+  transform: rotate(180deg);
+}
+
+details[open] summary .collapse-arrow {
+  transform: rotate(360deg);
+}
+
+details[open] summary .menu-sub-section-heading {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(2, 6, 12, 0.1);
+}
+
+summary {
+  display: flex;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.price-tag {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+}
+
+.menu-item-review > .rating {
+  font-size: 14px;
+}
+
+.menu-item-review > .rating-count {
+  font-size: 14px;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+.shimmer-details-card {
+  width: 100%;
+}
+
+.total-ratings span {
+  font-size: 14px;
+  margin-left: 2px;
+  margin-right: 4px;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+.rest-detail-popup-card .ratings-cost {
+  font-weight: 900;
+}
+.rest-detail-popup-card .ratings-cost .rating-star {
+  margin-right: 4px;
+  width: 25px;
+  height: 25px;
 }

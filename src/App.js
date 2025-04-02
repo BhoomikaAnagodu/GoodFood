@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import MainContainer from "./components/MainContainer";
+import { RouterProvider } from "react-router-dom";
+import { appRouter } from "./router";
 
 // React.createElement => Object => HTMLElement(render)
 const heading = React.createElement(
@@ -56,4 +57,5 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  *  - About Us
  *  - Contact Us
  */
-root.render(<MainContainer />);
+
+root.render(<RouterProvider router={appRouter} />);
