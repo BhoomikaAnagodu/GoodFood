@@ -15,35 +15,37 @@ const HomePageContainer = () => {
     handleSearchInputChange,
   } = useHomePageContainer();
 
+  console.log("filteredRestList", filteredRestList);
+
   return (
-    <div className="res-main-container">
-      <div className="res-container">
+    <div className="w-full py-5">
+      <div className="w-4/5 mx-auto bg-white">
         {filteredRestList?.length === 0 ? (
           <ShimmerContainer />
         ) : (
           <>
-            <div className="filter-section">
+            <div className="flex items-center">
               <button
-                className="top-resturant-fltr"
+                className="btn-primary mr-5"
                 onClick={filterTopResturants}
               >
                 Top Resturants
               </button>
-              <div className="search-grid">
+              <div className="flex border-stone-400 border-1 rounded-3xl p-1">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => handleSearchInputChange(e)}
-                  className="search-input"
+                  className="focus-visible:outline-0 px-2"
                 />
-                <Search className="search-icon" />
+                <Search className="w-5 h-5 mt-0.5 mr-1" />
               </div>
             </div>
-            <div className="res-grid">
+            <div className="py-5 flex flex-wrap grid-rows-3 gap-4">
               {filteredRestList?.map((data) => (
                 <NavLink
                   to={`/resturant/${data.info.id}`}
-                  className="res-card"
+                  className="w-70 cursor-pointer transition-primary hover:scale-95"
                   key={data.info.id}
                 >
                   <RestaurantCard resData={data} />

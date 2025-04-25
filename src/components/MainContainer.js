@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./Header";
+import Header from "./Header.js";
 import { Outlet } from "react-router-dom";
 
 const MainContainer = () => {
   return (
-    <div className="main-container">
+    <div className="w-full relative pt-20 text-base">
       <Header />
       <Outlet />
     </div>

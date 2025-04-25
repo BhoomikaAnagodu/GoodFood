@@ -27,9 +27,11 @@
     "svgo": "^3.3.2"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.0",
+    "tailwindcss": "^4.1.4"
   },
   "browserslist": [
     "last 3 versions"

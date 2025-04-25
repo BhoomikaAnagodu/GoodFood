@@ -10,19 +10,23 @@ const RestaurantPopupCard = ({ data }) => {
     sla,
   } = data;
   return (
-    <div className="rest-detail-popup-card">
-      <div className="ratings-cost">
-        <p className="res-ratings">
-          <RatingStar className="rating-star" />
-          <p className="total-ratings">
-            {avgRating}({totalRatingsString})<span> •</span>
+    <div className="shadow-xl/15 p-4 rounded-2xl">
+      <div className="flex items-center">
+        <div className="flex items-center font-bold">
+          <RatingStar className="w-5 h-5" />
+          <p className="mx-1">
+            {avgRating}({totalRatingsString})
+            <span className="opacity-50 font-normal"> • </span>
           </p>
-        </p>
-        <p className="delivery-time">{costForTwoMessage}</p>
+        </div>
+        <p className="font-bold">{costForTwoMessage}</p>
       </div>
-      <p>{cuisines.join(", ")}</p>
-      <p>Outlet - {areaName}</p>
-      <p>{sla?.slaString}</p>
+      <p className="text-sm text-orange-600">{cuisines.join(", ")}</p>
+      <p className="font-semibold">
+        Outlet -
+        <span className="font-light opacity-50 text-sm mx-2">{areaName}</span>
+      </p>
+      <p className="text-sm text-stone-600 font-semibold">{sla?.slaString}</p>
     </div>
   );
 };

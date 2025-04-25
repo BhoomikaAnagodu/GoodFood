@@ -1,10 +1,14 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import AboutUs from "./components/AboutUs";
 import HomePageContainer from "./components/HomePageContainer";
 import ErrorBoundary from "./components/ErrorBoundary";
-import RestaurantDetails from "./components/RestaurantDetails/RestaurantDetails";
+// import RestaurantDetails from "./components/RestaurantDetails/RestaurantDetails";
 
+const RestaurantDetails = lazy(() =>
+  import("./components/RestaurantDetails/RestaurantDetails")
+);
 const routes = [
   {
     path: "/",
@@ -21,7 +25,11 @@ const routes = [
       },
       {
         path: "/resturant/:restId",
-        element: <RestaurantDetails />,
+        element: (
+          <Suspense fallback={<h1>Loading</h1>}>
+            <RestaurantDetails />
+          </Suspense>
+        ),
       },
     ],
   },

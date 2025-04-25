@@ -1,39 +1,47 @@
 import useRestaurantDetails from "../../hooks/useRestaurantDetails";
 import RestaurantPopupCard from "./RestaurantPopupCard";
-import RestaurantMenu from "./RestaurantMenu";
-import { ShimmerCard } from "../ShimmerContainer";
+import RestaurantMenuCategory from "./RestaurantMenuCategory";
 
 const RestaurantDetails = () => {
-  const { restData } = useRestaurantDetails();
-
-  const restaurantName = restData?.find((list) => list?.card?.card?.text)?.card
-    ?.card?.text;
-
-  const restaurantPopupCardData = restData?.find(
-    (list) => list?.card?.card?.info
-  )?.card?.card?.info;
-
-  const restaurantMenu = restData?.find(
-    (list) => list?.groupedCard?.cardGroupMap
-  )?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  const {
+    restData,
+    restaurantName,
+    restaurantPopupCardData,
+    restaurantMenu,
+    showMenu,
+    setShowMenu,
+  } = useRestaurantDetails();
 
   return (
-    <div className="rest-detail-container">
+    <div className="w-1/2 mx-auto my-5">
       {restData ? (
         <>
-          <h2 className="rest-name">{restaurantName}</h2>
+          <h2 className="text-[28px] m-0 py-5 px-1">{restaurantName}</h2>
           <RestaurantPopupCard data={restaurantPopupCardData} />
-          <RestaurantMenu data={restaurantMenu} />
+          {restaurantMenu.map((category, index) => (
+            <RestaurantMenuCategory
+              key={`menu_list_${index}`}
+              data={category?.card?.card}
+              showMenu={showMenu}
+              setShowMenu={setShowMenu}
+            />
+          ))}
         </>
       ) : (
         <>
-          <h3 className="shimmer-title">shimmer</h3>
-          <div className="shimmer-details-card">
-            <div className="shimmer-img"></div>
-            <p className="shimmer-title">shimmer</p>
-            <p className="shimmer-caption">shimmer</p>
-            <p className="shimmer-caption1">shimmer</p>
-            <p className="shimmer-caption2">shimmer</p>
+          <h3 className="text-[28px] py-5 bg-neutral-200 text-neutral-200">
+            shimmer
+          </h3>
+          <div className="w-full">
+            <div className="w-full h-60 rounded-xl bg-neutral-200"></div>
+            <p className="w-1/2 bg-neutral-200 text-neutral-200 my-2">
+              shimmer
+            </p>
+            <p className="w-3/4 bg-neutral-200 text-neutral-200">shimmer</p>
+            <p className="w-4/5 bg-neutral-200 text-neutral-200 my-2">
+              shimmer
+            </p>
+            <p className="w-1/3 bg-neutral-200 text-neutral-200">shimmer</p>
           </div>
         </>
       )}
