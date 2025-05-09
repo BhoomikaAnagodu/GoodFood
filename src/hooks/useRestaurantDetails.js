@@ -6,6 +6,8 @@ const useRestaurantDetails = () => {
   const { restId } = useParams();
   const [restData, setRestData] = useState();
   const [showMenu, setShowMenu] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+  const [newCartData, setNewCartData] = useState(null);
 
   useEffect(() => {
     fetchResturantData();
@@ -30,6 +32,16 @@ const useRestaurantDetails = () => {
       menuList?.card?.card?.["@type"].includes("ItemCategory")
     );
 
+  const handleCloseModal = () => {
+    setNewCartData(null);
+    setOpenModal(false);
+  };
+
+  const handleOpenModal = (data) => {
+    setNewCartData(data);
+    setOpenModal(true);
+  };
+
   return {
     restData,
     restaurantName,
@@ -37,6 +49,10 @@ const useRestaurantDetails = () => {
     restaurantMenu,
     showMenu,
     setShowMenu,
+    openModal,
+    handleCloseModal,
+    handleOpenModal,
+    newCartData,
   };
 };
 

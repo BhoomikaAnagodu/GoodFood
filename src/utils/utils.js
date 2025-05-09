@@ -7,7 +7,11 @@ export const debounce = (callbackFnc, delay) => {
     }
 
     timeoutId = setTimeout(() => {
-      callbackFnc(args);
+      callbackFnc(...args);
     }, delay);
   };
+};
+
+export const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 };

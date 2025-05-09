@@ -1,14 +1,16 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
-import AboutUs from "./components/AboutUs";
-import HomePageContainer from "./components/HomePageContainer";
+import LandingPage from "./components/LandingPage";
+import Cart from "./components/Cart";
 import ErrorBoundary from "./components/ErrorBoundary";
-// import RestaurantDetails from "./components/RestaurantDetails/RestaurantDetails";
 
+const RestaurantPage = lazy(() => import("./components/RestaurantPage"));
+const About = lazy(() => import("./components/About"));
 const RestaurantDetails = lazy(() =>
   import("./components/RestaurantDetails/RestaurantDetails")
 );
+
 const routes = [
   {
     path: "/",
@@ -17,11 +19,19 @@ const routes = [
     children: [
       {
         path: "/",
-        element: <HomePageContainer />,
+        element: <LandingPage />,
+      },
+      {
+        path: "/restaurants",
+        element: <RestaurantPage />,
       },
       {
         path: "/about",
-        element: <AboutUs />,
+        element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/resturant/:restId",

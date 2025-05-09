@@ -54,7 +54,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  *      - Resturant Details - Name, Location, Cuisine, Delivery Time, Ratings
  * Footer
  *  - Copywrite disclaimers
- *  - About Us
+ *  - About
  *  - Contact Us
  */
 

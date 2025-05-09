@@ -1,5 +1,4 @@
-import { useState } from "react";
-import CollapseArrow from "../../../assets/collapse-arrow.svg";
+import CollapseArrow from "../../../assets/icons/collapse-arrow.svg";
 import MenuItemCard from "./MenuItemCard";
 
 const RestaurantMenuCategory = ({
@@ -8,24 +7,29 @@ const RestaurantMenuCategory = ({
   style = "",
   showMenu,
   setShowMenu,
+  dispatcherFn,
 }) => {
-  toggleAccordion = (title) => {
+  const toggleAccordion = (title) => {
     setShowMenu(showMenu === title ? null : title);
-    document.getElementById(showMenu)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    if (showMenu !== title) {
+      document.getElementById(showMenu)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
     <div
       className={`my-4 pb-2 ${style} ${
-        !subMenuSection ? "px-2 border-b-10 border-stone-200" : ""
+        !subMenuSection ? "px-2 border-b-10 border-theme-base-50" : ""
       }`}
     >
       <div
-        className="flex items-center cursor-pointer"
-        onClick={() => toggleAccordion(data?.title)}
+        className={`flex items-center ${
+          data?.itemCards ? "cursor-pointer" : ""
+        }`}
+        onClick={data?.itemCards ? () => toggleAccordion(data?.title) : null}
       >
         <h2
           id={data?.title}
@@ -46,7 +50,7 @@ const RestaurantMenuCategory = ({
         <RestaurantMenuCategory
           style={
             catIndex !== data?.categories?.length - 1
-              ? "border-b-1 border-stone-200"
+              ? "border-b-1 border-theme-base-100"
               : ""
           }
           key={`menu_cat_${categoryList?.categoryId}`}
@@ -54,6 +58,7 @@ const RestaurantMenuCategory = ({
           data={categoryList}
           showMenu={showMenu}
           setShowMenu={setShowMenu}
+          dispatcherFn={dispatcherFn}
         />
       ))}
       {data?.title === showMenu && (
@@ -63,11 +68,12 @@ const RestaurantMenuCategory = ({
               <MenuItemCard
                 style={
                   index < data?.itemCards?.length - 1
-                    ? "border-b-1 border-stone-200 pb-8"
+                    ? "border-b-1 border-theme-base-100 pb-8"
                     : ""
                 }
                 key={item?.card?.info?.id}
                 data={item?.card?.info}
+                dispatcherFn={dispatcherFn}
               />
             );
           })}

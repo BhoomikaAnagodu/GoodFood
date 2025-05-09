@@ -1,5 +1,5 @@
 import React from "react";
-import RatingStar from "../../assets/star-in-circle.svg";
+import RatingStar from "../../assets/icons/star-in-circle.svg";
 import { IMG_CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
@@ -24,7 +24,7 @@ const RestaurantCard = ({ resData }) => {
           </p>
           <p className="font-normal ml-2"> {sla.slaString}</p>
         </div>
-        <p className="opacity-60 text-sm font-light overflow-ellipsis overflow-hidden whitespace-nowrap mb-2">
+        <p className="opacity-60 text-sm font-light overflow-ellipsis overflow-hidden whitespace-nowrap mb-1">
           {cuisines.toString()}
         </p>
         <p className="opacity-80 font-light">{areaName}</p>

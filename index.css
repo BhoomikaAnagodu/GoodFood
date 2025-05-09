@@ -1,24 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-  --font-lucida: "Lucida Grande", sans-serif;
+  --font-kanchenjunga: "Kanchenjunga", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --color-theme-base: #45484c;
+  --color-theme-base-50: #f3f3f4;
+  --color-theme-base-100: #ececed;
+  --color-theme-base-200: #d9dadb;
+  --color-theme-base-500: #a2a3a5;
+  --color-theme-base-700: #7c7e81;
+  --color-theme-base-800: #6a6c6f;
+  --color-theme-base-900: #575a5d;
+  --color-theme-green: #29ba8a;
+  --color-theme-orange: #fc824e;
+  --color-theme-orange-400: #fdc0a6;
+  --color-theme-green-400: #a9e3d0;
+  --color-theme-red: #fa4332;
+
+  --animate-infiniteScroll: infiniteScroll 50s linear infinite;
+
+  @keyframes infiniteScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 @layer components {
-  .btn-primary {
-    border-radius: calc(infinity * 1px);
-    background-color: var(--color-orange-600);
+  .btn {
     padding-inline: --spacing(5);
     padding-block: --spacing(2);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    border-radius: calc(infinity * 1px);
+    background-color: var(--color-theme-orange);
+    padding-inline: --spacing(5);
+    padding-block: --spacing(2);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-theme-base-50);
     box-shadow: var(--shadow-md);
     cursor: pointer;
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-orange-500);
+        background-color: var(--color-theme-orange);
       }
     }
+  }
+  html,
+  body {
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+    scroll-behavior: auto;
   }
 
   .transition-primary {
@@ -29,4 +68,29 @@
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(2, 6, 12, 0.1);
   }
+
+  .tooltip-div:hover > .tooltip {
+    opacity: 100%;
+    z-index: 50;
+  }
+
+  .tooltip {
+    opacity: 0%;
+    position: absolute;
+  }
+
+  .clip-bottom {
+    clip-path: polygon(50% 0, -100% -100%, 0 100%);
+  }
+  .modal-shadow {
+    box-shadow: 0 2px 20px 0 rgba(40, 44, 63, 0.5);
+  }
+}
+
+.landingBg {
+  background-image: url("/assets/Images/background.jpg");
+  width: 100%;
+  min-height: 722px;
+  height: 100vh;
+  background-size: cover;
 }
