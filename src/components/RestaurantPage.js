@@ -15,6 +15,7 @@ const RestaurantPage = () => {
     searchQuery,
     setSearchQuery,
     isTopResFilterEnabled,
+    setIsTopResFilterEnabled,
   } = useRestaurantPage();
 
   let cardList =
@@ -26,23 +27,35 @@ const RestaurantPage = () => {
           <ShimmerContainer />
         ) : (
           <>
-            <div className="flex items-center">
+            <div className="flex items-center justify-end gap-4">
+              <div className="flex border-theme-base border-1 rounded-3xl p-1">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  placeholder="Cuisines"
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="focus-visible:outline-0 px-2 placeholder:text-theme-base-500 placeholder:font-light placeholder:text-sm"
+                />
+                <Search className="w-5 h-5 mt-0.5 mr-1" />
+              </div>
               <button
-                className="btn-primary mr-5"
+                className="btn-primary"
                 data-automation-id="top-resturants-btn"
                 onClick={handleFilterTopRestaurants}
               >
                 Top Resturants
               </button>
-              <div className="flex border-theme-base border-1 rounded-3xl p-1">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="focus-visible:outline-0 px-2"
-                />
-                <Search className="w-5 h-5 mt-0.5 mr-1" />
-              </div>
+            </div>
+            <div className="my-2">
+              {isTopResFilterEnabled && (
+                <p
+                  className="w-fit flex items-center bg-theme-orange-800 cursor-pointer hover:bg-theme-orange-600 text-sm px-4 py-2 rounded-2xl"
+                  onClick={() => setIsTopResFilterEnabled(false)}
+                >
+                  <span>Top Restaurants</span>
+                  <span className="ml-2">x</span>
+                </p>
+              )}
             </div>
             {cardList?.length > 0 ? (
               <div className="py-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

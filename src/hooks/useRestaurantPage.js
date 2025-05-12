@@ -77,8 +77,12 @@ const useRestaurantPage = () => {
 
   /* Function to filter the restaurant list based on search query */
   const handleSearch = debounce(() => {
-    const filteredList = restList.filter((list) =>
-      list.info.name.toLowerCase().includes(searchQuery.toLowerCase())
+    console.log("handleSearch Called");
+    const RestList = isTopResFilterEnabled ? filteredRestList : restList;
+    const filteredList = RestList.filter((list) =>
+      list.info.cuisines.some((cuisin) =>
+        cuisin.toLowerCase().includes(searchQuery.toLowerCase())
+      )
     );
 
     setFilteredRestList(filteredList);
@@ -86,8 +90,9 @@ const useRestaurantPage = () => {
 
   /* Function to filter top rated restaurants */
   const handleFilterTopRestaurants = () => {
+    const RestList = searchQuery ? filteredRestList : restList;
     setIsTopResFilterEnabled(true);
-    const filteredList = restList.filter((list) => list.info.avgRating >= 4.5);
+    const filteredList = RestList.filter((list) => list.info.avgRating >= 4.5);
     setFilteredRestList(filteredList);
   };
 
@@ -101,6 +106,12 @@ const useRestaurantPage = () => {
       fetchMoreData();
     }
   }, [page]);
+
+  useEffect(() => {
+    if (!isTopResFilterEnabled && searchQuery !== "") {
+      handleSearch();
+    }
+  }, [isTopResFilterEnabled]);
 
   useEffect(() => {
     if (searchQuery !== "") {
@@ -126,6 +137,7 @@ const useRestaurantPage = () => {
     searchQuery,
     setSearchQuery,
     isTopResFilterEnabled,
+    setIsTopResFilterEnabled,
   };
 };
 
