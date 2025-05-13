@@ -77,7 +77,6 @@ const useRestaurantPage = () => {
 
   /* Function to filter the restaurant list based on search query */
   const handleSearch = debounce(() => {
-    console.log("handleSearch Called");
     const RestList = isTopResFilterEnabled ? filteredRestList : restList;
     const filteredList = RestList.filter((list) =>
       list.info.cuisines.some((cuisin) =>

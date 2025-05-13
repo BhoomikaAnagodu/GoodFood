@@ -1,25 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1746520215583" clover="3.2.0">
-  <project timestamp="1746520215583" name="All files">
-    <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="14" coveredelements="14" complexity="0" loc="8" ncloc="8" packages="2" files="2" classes="2"/>
-    <package name="components">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="AboutUs.js" path="/Users/juubii/bhoomika/Reactjs/src/components/AboutUs.js">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+<coverage generated="1747148322267" clover="3.2.0">
+  <project timestamp="1747148322267" name="All files">
+    <metrics statements="24" coveredstatements="23" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="4" elements="31" coveredelements="29" complexity="0" loc="24" ncloc="24" packages="3" files="16" classes="16"/>
+    <package name="assets.Images">
+      <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="about_1.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/about_1.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_1.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_1.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_10.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_10.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_11.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_11.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_12.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_12.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_13.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_13.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_2.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_2.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_3.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_3.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_4.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_4.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_5.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_5.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_6.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_6.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_7.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_7.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_8.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_8.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="slide_9.jpg" path="/Users/juubii/bhoomika/GoodFood/assets/Images/slide_9.jpg">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="utils">
-      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <file name="utils.js" path="/Users/juubii/bhoomika/Reactjs/src/utils/utils.js">
-        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+    <package name="src.components">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="About.js" path="/Users/juubii/bhoomika/GoodFood/src/components/About.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
+      <file name="utils.js" path="/Users/juubii/bhoomika/GoodFood/src/utils/utils.js">
+        <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="6" count="2" type="stmt"/>
         <line num="9" count="4" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
       </file>
     </package>
   </project>
