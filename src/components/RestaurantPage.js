@@ -29,7 +29,7 @@ const RestaurantPage = () => {
           <>
             <div className="fixed top-20 left-0 shadow-top z-110 bg-white py-5 w-full">
               <div className="main-container mx-auto flex items-center justify-end gap-4">
-                <div className="flex border-theme-base border-1 rounded-3xl p-1">
+                <div className="flex border-theme-base border-1 rounded-3xl p-1.5">
                   <input
                     type="text"
                     value={searchQuery}

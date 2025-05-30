@@ -13,15 +13,17 @@ export const ShimmerCard = () => {
 const ShimmerContainer = () => {
   return (
     <>
-      <div className="flex justify-end gap-4">
-        <button className="btn-primary bg-theme-base-50 text-theme-base-50 px-14">
-          shimmer button
-        </button>
-        <button className="btn-primary bg-theme-base-50 text-theme-base-50">
-          shimmer button
-        </button>
+      <div className="fixed top-20 left-0 shadow-top z-110 bg-white py-5 w-full">
+        <div className="main-container mx-auto flex justify-end gap-4">
+          <button className="btn-primary bg-theme-base-50 text-theme-base-50 px-14">
+            shimmer button
+          </button>
+          <button className="btn-primary bg-theme-base-50 text-theme-base-50">
+            shimmer button
+          </button>
+        </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
+      <div className="pt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-5">
         {[...Array(21).keys()].slice(1).map((i) => (
           <ShimmerCard key={i} />
         ))}
