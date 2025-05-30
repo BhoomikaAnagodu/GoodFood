@@ -17,7 +17,7 @@ import Slide13 from "../../assets/Images/slide_13.jpg";
 const About = () => {
   return (
     <>
-      <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto">
+      <div className="main-container mx-auto">
         <div className="grid grid-cols-2 gap-8 py-10 items-center">
           <div className="px-10">
             <p className="w-1/6 border-t-2 border-t-theme-orange"></p>
@@ -37,7 +37,7 @@ const About = () => {
         </div>
       </div>
       <div className="bg-theme-green-400 py-20">
-        <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto">
+        <div className="main-container mx-auto">
           <div className="grid grid-cols-4 text-center">
             <div>
               <p className="text-5xl font-extrabold">25</p>
@@ -58,7 +58,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto my-10">
+      <div className="main-container mx-auto my-10">
         <div className="text-center">
           <h1 className="text-4xl text-theme-orange uppercase font-bold">
             Our Mission

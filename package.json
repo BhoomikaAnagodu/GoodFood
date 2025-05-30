@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BhoomikaAnagodu/react-js.git"
+    "url": "git+https://github.com/BhoomikaAnagodu/goodFood.git"
   },
   "keywords": [
     "reactjs"
@@ -17,9 +17,9 @@
   "author": "Bhoomika Anagodu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BhoomikaAnagodu/react-js/issues"
+    "url": "https://github.com/BhoomikaAnagodu/goodFood/issues"
   },
-  "homepage": "https://github.com/BhoomikaAnagodu/react-js#readme",
+  "homepage": "https://github.com/BhoomikaAnagodu/goodFood#readme",
   "devDependencies": {
     "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.27.1",

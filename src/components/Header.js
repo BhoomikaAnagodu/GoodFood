@@ -13,10 +13,10 @@ const Header = () => {
           ? headerColor
             ? "bg-zinc-100 opacity-95"
             : "bg-transparent"
-          : "bg-white"
+          : "bg-white shadow-xs"
       }`}
     >
-      <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto flex justify-between h-20 items-center">
+      <div className="main-container mx-auto flex justify-between h-20 items-center">
         <div>
           <NavLink to="/">
             <div className="flex items-center ">

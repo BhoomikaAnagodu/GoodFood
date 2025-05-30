@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <div className="bg-zinc-100 opacity-90">
-        <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto">
+        <div className="main-container mx-auto">
           <div className="py-5 lg:py-10">
             <div className="text-sm grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2">
               <div className="py-5">
@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-theme-orange py-3 ">
-        <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto text-white text-xs flex items-center">
+        <div className="main-container mx-auto text-white text-xs flex items-center">
           <CopyRightsIcon className="w-2 h-2 mr-1" />
           <p> GoodFood | All Rights Reseverd</p>
         </div>

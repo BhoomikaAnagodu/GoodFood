@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { IMG_CDN_URL } from "../utils/constants";
+import Empty_Cart from "../../assets/icons/empty-cart.svg";
 import BulletIcon from "../../assets/icons/dot-square.svg";
 import Info from "../../assets/icons/info.svg";
 import { decrementItemQuanity, incrementItemQuanity } from "../store/cartSlice";
@@ -138,14 +139,15 @@ const Cart = () => {
       ) : (
         <div className="h-[83vh] flex justify-center items-center">
           <div className="text-center">
-            <h2 className="py-2">Your cart is empty </h2>
-            <p className="py-2">
-              You can go to home page to view more restaurants
+            <Empty_Cart className="w-30 h-30 mx-auto my-4" />
+            <h2 className="py-1 text-2xl">Your Cart is Empty </h2>
+            <p>
+              Head to the restaurants page to start adding delicious items to
+              your cart
             </p>
-
-            <Link to={"/"} className="btn-primary my-2">
-              Go to Homepage
-            </Link>
+            <button className="btn-primary my-5">
+              <Link to={"/"}>Visit Restaurants</Link>
+            </button>
           </div>
         </div>
       )}

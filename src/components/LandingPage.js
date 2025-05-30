@@ -6,7 +6,7 @@ import ArrowRightUp from "../../assets/icons/arrow-right-up.svg";
 const LandingPage = () => {
   return (
     <>
-      <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto">
+      <div className="main-container mx-auto">
         <div className="h-[90dvh] py-30">
           <div className="font-poppins flex items-center text-theme-base-800">
             <p className="border-t-2 border-t-theme-base-800 w-10 mx-2"> </p>

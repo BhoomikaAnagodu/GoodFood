@@ -21,17 +21,17 @@
   --color-theme-red: #fa4332;
 
   --animate-infiniteScroll: infiniteScroll 50s linear infinite;
-
-  @keyframes infiniteScroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
+  --shadow-top: 0 -1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 @layer components {
   .btn {
     padding-inline: --spacing(5);
@@ -96,4 +96,8 @@
   min-height: 722px;
   height: 100vh;
   background-size: cover;
+}
+
+.main-container {
+  @apply w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5;
 }

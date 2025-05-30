@@ -22,29 +22,31 @@ const RestaurantPage = () => {
     searchQuery || isTopResFilterEnabled ? filteredRestList : restList;
   return (
     <div data-automation-id="home-page-container" className="w-full py-5">
-      <div className="w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5 mx-auto bg-white">
+      <div className="relative main-container mx-auto bg-white">
         {restList?.length === 0 ? (
           <ShimmerContainer />
         ) : (
           <>
-            <div className="flex items-center justify-end gap-4">
-              <div className="flex border-theme-base border-1 rounded-3xl p-1">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  placeholder="Cuisines"
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="focus-visible:outline-0 px-2 placeholder:text-theme-base-500 placeholder:font-light placeholder:text-sm"
-                />
-                <Search className="w-5 h-5 mt-0.5 mr-1" />
+            <div className="fixed top-20 left-0 shadow-top z-110 bg-white py-5 w-full">
+              <div className="main-container mx-auto flex items-center justify-end gap-4">
+                <div className="flex border-theme-base border-1 rounded-3xl p-1">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    placeholder="Cuisines"
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="focus-visible:outline-0 px-2 placeholder:text-theme-base-500 placeholder:font-light placeholder:text-sm"
+                  />
+                  <Search className="w-5 h-5 mt-0.5 mr-1" />
+                </div>
+                <button
+                  className="btn-primary"
+                  data-automation-id="top-resturants-btn"
+                  onClick={handleFilterTopRestaurants}
+                >
+                  Top Resturants
+                </button>
               </div>
-              <button
-                className="btn-primary"
-                data-automation-id="top-resturants-btn"
-                onClick={handleFilterTopRestaurants}
-              >
-                Top Resturants
-              </button>
             </div>
             <div className="my-2">
               {isTopResFilterEnabled && (
@@ -58,7 +60,7 @@ const RestaurantPage = () => {
               )}
             </div>
             {cardList?.length > 0 ? (
-              <div className="py-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="pt-20 py-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {cardList?.length > 0 &&
                   cardList?.map((data) => (
                     <NavLink
