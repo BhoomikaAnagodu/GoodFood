@@ -5,6 +5,7 @@
   "scripts": {
     "start": "PORT=5000 parcel index.html",
     "build": "parcel build index.html",
+    "postbuild": "cp _redirects dist/_redirects",
     "test": "jest"
   },
   "repository": {
