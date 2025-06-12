@@ -1,6 +1,5 @@
 {
   "name": "food",
-  "version": "1.0.0",
   "description": "ReactJs Learning",
   "scripts": {
     "start": "PORT=5000 parcel index.html",
@@ -26,6 +25,9 @@
     "@babel/preset-env": "^7.27.1",
     "@babel/preset-react": "^7.27.1",
     "@parcel/transformer-svg-react": "^2.13.3",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
     "@tailwindcss/postcss": "^4.1.4",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -36,6 +38,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.13.3",
     "process": "^0.11.10",
+    "semantic-release": "^22.0.12",
     "svgo": "^3.3.2",
     "tailwindcss": "^4.1.4"
   },
