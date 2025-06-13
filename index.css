@@ -98,9 +98,6 @@
 .landingBg {
   background-image: url("/assets/Images/background.jpg");
   width: 100%;
-  min-height: 722px;
-  height: 100vh;
-  background-size: cover;
 }
 
 .main-container {

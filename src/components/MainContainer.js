@@ -17,7 +17,9 @@ const MainContainer = () => {
     <Provider store={appStore}>
       <div
         className={`w-full relative pt-20 text-base ${
-          pathname === "/" ? "landingBg" : ""
+          pathname === "/"
+            ? "landingBg bg-cover xxs:bg-position-[-380px] xs:bg-position-[-320px] md:bg-position-[-300px] h-[70dvh] lg:bg-center lg:bg-cover lg:h-[100dvh]"
+            : ""
         }`}
       >
         <Header />
