@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xxs: 10rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+
   --font-kanchenjunga: "Kanchenjunga", sans-serif;
   --font-poppins: "Poppins", sans-serif;
   --color-theme-base: #45484c;
@@ -22,6 +26,7 @@
 
   --animate-infiniteScroll: infiniteScroll 50s linear infinite;
   --shadow-top: 0 -1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-menu: 0px 2px 8px 0px rgba(123, 63, 0, 0.2);
 }
 
 @keyframes infiniteScroll {
@@ -100,4 +105,8 @@
 
 .main-container {
   @apply w-[90%] md:w-[88%] lg:w-[85%] xl:w-4/5;
+}
+
+.menu-link {
+  @apply block p-2 xxs:text-sm xs:text-sm sm:text-base md:text-base transition-all ease-in-out duration-300 hover:text-theme-orange;
 }

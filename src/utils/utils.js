@@ -15,3 +15,5 @@ export const debounce = (callbackFnc, delay) => {
 export const scrollToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 };
+
+export const isMobile = window.innerWidth < 1024;
