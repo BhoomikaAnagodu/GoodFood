@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import LOGO from "../../assets/icons/logo.svg";
 import CopyRightsIcon from "../../assets/icons/copyright.svg";
+import { FOOTER_ITEMS } from "../utils/constants";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
       <div className="bg-zinc-100 opacity-90">
         <div className="main-container mx-auto">
           <div className="py-5 lg:py-10">
-            <div className="text-sm grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2">
+            <div className="text-sm grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-8 md:gap-x-5 lg:gap-2">
               <div className="py-5">
                 <div className="flex items-center pb-3">
                   <LOGO className="w-10 h-10 lg:w-15 lg:h-15 cursor-pointer" />
@@ -19,53 +20,29 @@ const Footer = () => {
                     </span>
                   </h3>
                 </div>
-                <p className="text-sm sm:px-0 md:px-1 lg:px-3 text-theme-base-700">
+                <p className="text-sm px-1 lg:px-3 text-theme-base-700">
                   Join us for exclusive updates, tasty offers, and fresh meals
                   delivered straight to your doorstep.
                 </p>
               </div>
-              <div className="flex md:justify-center sm:justify-center px-3 md:px-0 py-5">
-                <div>
-                  <h3 className="text-base lg:text-lg py-2 font-semibold text-theme-base-900">
-                    Explore
-                  </h3>
-                  <ul className="text-theme-base-700">
-                    <Link to="/">
-                      <li className="py-2">Home</li>
-                    </Link>
-                    <Link to="/restaurants">
-                      <li className="py-2">Restaurants</li>
-                    </Link>
-                    <Link to="/about">
-                      <li className="py-2">About</li>
-                    </Link>
-                  </ul>
+              {FOOTER_ITEMS.map((item) => (
+                <div className="flex md:justify-center px-3 md:px-0 py-5">
+                  <div>
+                    <h3 className="text-base lg:text-lg py-2 font-semibold text-theme-base-900">
+                      {item.heading}
+                    </h3>
+                    <ul className="text-theme-base-700">
+                      {item.list.map((listItem) => (
+                        <li className="py-1 lg:py-2">
+                          <NavLink to={`/${listItem.value}`}>
+                            {listItem.label}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div className="flex md:justify-center sm:justify-start px-3 md:px-0 py-5">
-                <div>
-                  <h3 className="text-lg py-2 font-semibold text-theme-base-900">
-                    Help
-                  </h3>
-                  <ul className="text-theme-base-700">
-                    <li className="py-2">Support Center</li>
-                    <li className="py-2">Privacy Policy</li>
-                    <li className="py-2">Terms & Conditions</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="flex md:justify-center sm:justify-center px-3 md:px-0 py-5">
-                <div>
-                  <h3 className="text-lg py-2 font-semibold text-theme-base-900">
-                    Contact
-                  </h3>
-                  <ul className="text-theme-base-700">
-                    <li className="py-2">Address</li>
-                    <li className="py-2">Phone Number</li>
-                    <li className="py-2">Email</li>
-                  </ul>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

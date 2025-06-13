@@ -21,3 +21,30 @@ export const NAV_ITEMS = [
     value: "cart",
   },
 ];
+
+export const FOOTER_ITEMS = [
+  {
+    heading: "Explore",
+    list: [
+      { label: "Home", value: "" },
+      { label: "Restaurants", value: "restaurants" },
+      { label: "About", value: "about" },
+    ],
+  },
+  {
+    heading: "Help",
+    list: [
+      { label: "Support Center", value: "" },
+      { label: "Privacy Policy", value: "" },
+      { label: "Terms & Conditions", value: "" },
+    ],
+  },
+  {
+    heading: "Contact",
+    list: [
+      { label: "Address", value: "" },
+      { label: "Phone Number", value: "" },
+      { label: "Email", value: "" },
+    ],
+  },
+];
