@@ -18,7 +18,7 @@ const MainContainer = () => {
       <div
         className={`w-full relative pt-20 text-base ${
           pathname === "/"
-            ? "landingBg bg-cover xxs:bg-position-[-380px] xs:bg-position-[-320px] md:bg-position-[-300px] h-[70dvh] lg:bg-center lg:bg-cover lg:h-[100dvh]"
+            ? "landingBg h-[70dvh] lg:bg-center lg:h-[100dvh]"
             : ""
         }`}
       >

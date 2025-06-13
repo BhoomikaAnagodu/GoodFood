@@ -98,6 +98,8 @@
 .landingBg {
   background-image: url("/assets/Images/background.jpg");
   width: 100%;
+  background-size: cover;
+  background-position: right 30% bottom 50%;
 }
 
 .main-container {
