@@ -20,7 +20,9 @@ const useRestaurantDetails = () => {
       const response = await fetch(MENU_API_URL + restId);
       if (response?.status === 200) {
         const data = await response.json();
-        setRestData(data?.data?.cards);
+        setTimeout(() => {
+          setRestData(data?.data?.cards);
+        }, 1000);
       } else {
         const data =
           Object.values(RESTURANT_DETAILS_MOCK).find(
@@ -29,8 +31,10 @@ const useRestaurantDetails = () => {
         const is_mock_data_found = Object.values(
           RESTURANT_DETAILS_MOCK
         ).findIndex((item) => item.id === restId);
-        setShowAlert(is_mock_data_found === -1);
-        setRestData(data?.cards);
+        setTimeout(() => {
+          setShowAlert(is_mock_data_found === -1);
+          setRestData(data?.cards);
+        }, 1000);
       }
     } catch (err) {
       console.log("response error--", err);
