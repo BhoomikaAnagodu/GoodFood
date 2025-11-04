@@ -146,7 +146,7 @@ const Cart = () => {
               your cart
             </p>
             <button className="btn-primary my-5">
-              <Link to={"/"}>Visit Restaurants</Link>
+              <Link to={"/restaurants"}>Visit Restaurants</Link>
             </button>
           </div>
         </div>

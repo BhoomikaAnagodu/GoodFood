@@ -2,7 +2,7 @@
   "name": "food",
   "description": "ReactJs Learning",
   "scripts": {
-    "start": "PORT=5000 parcel index.html",
+    "start": "PORT=5120 parcel index.html",
     "build": "parcel build index.html",
     "postbuild": "cp _redirects dist/_redirects",
     "test": "jest"

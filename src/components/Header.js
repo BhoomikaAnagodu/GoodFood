@@ -1,37 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
-import useHeader from "../hooks/useHeader";
+import { useHeader } from "../hooks/useHeader";
 import LOGO from "../../assets/icons/logo.svg";
 import Hamburger_Menu_Icon from "../../assets/icons/hamburger-menu.png";
 import { NAV_ITEMS } from "../utils/constants";
 import { isMobile } from "../utils/utils";
 
 const Header = () => {
-  const { cartItemsCount, location, headerColor } = useHeader();
-  const [openMenu, setOpenMenu] = useState(false);
-
-  const menuRef = useRef(null);
-
-  const toggleMenu = () => {
-    setOpenMenu((prev) => !prev);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        openMenu &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target)
-      ) {
-        setOpenMenu(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [openMenu]);
+  const {
+    cartItemsCount,
+    location,
+    headerColor,
+    toggleMenu,
+    openMenu,
+    menuRef,
+  } = useHeader();
 
   return (
     <header
@@ -91,6 +73,7 @@ const Header = () => {
                 {NAV_ITEMS.map((item) => (
                   <NavLink
                     to={`/${item.value}`}
+                    key={item.label}
                     className={({ isActive }) =>
                       [
                         isActive

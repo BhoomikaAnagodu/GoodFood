@@ -4,6 +4,7 @@ import useRestaurantDetails from "../../hooks/useRestaurantDetails";
 import useAddToCart from "../../hooks/useAddToCart";
 import RestaurantPopupCard from "./RestaurantPopupCard";
 import RestaurantMenuCategory from "./RestaurantMenuCategory";
+import Alert_Icon from "../../../assets/icons/alert.svg";
 
 const RestaurantDetails = () => {
   const {
@@ -17,6 +18,7 @@ const RestaurantDetails = () => {
     handleCloseModal,
     handleOpenModal,
     newCartData,
+    showAlert,
   } = useRestaurantDetails();
 
   const { items } = useSelector((store) => store.cart);
@@ -33,6 +35,18 @@ const RestaurantDetails = () => {
 
   return (
     <div className="w-1/2 mx-auto my-5 relative">
+      {showAlert && (
+        <div className="flex justify-around gap-2 items-start p-4 rounded-sm bg-[#fef3cc] ">
+          <Alert_Icon className="w-8 h-8" />
+          <div className="text-[#894b00] text-sm">
+            <p className="font-semibold">Note:</p>
+            <p>
+              Restaurant data is currently being loaded using mock data due to
+              CORS errors from the external API. This is for reference only.
+            </p>
+          </div>
+        </div>
+      )}
       {restData ? (
         <>
           <h2 className="text-[28px] m-0 py-5 px-1 font-bold">

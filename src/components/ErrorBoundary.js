@@ -6,7 +6,9 @@ const ErrorBoundary = () => {
 
   return (
     <div>
-      <h1>{error.error.message}</h1>
+      <h1>
+        {error?.error?.message || error?.message || "Something Went Wrong"}
+      </h1>
     </div>
   );
 };

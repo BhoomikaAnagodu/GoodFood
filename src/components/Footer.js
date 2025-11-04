@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import LOGO from "../../assets/icons/logo.svg";
 import CopyRightsIcon from "../../assets/icons/copyright.svg";
-import { FOOTER_ITEMS } from "../utils/constants";
+import { FOOTER_ITEMS } from "../utils/constants.js";
 
 const Footer = () => {
   return (
@@ -26,14 +26,20 @@ const Footer = () => {
                 </p>
               </div>
               {FOOTER_ITEMS.map((item) => (
-                <div className="flex md:justify-center px-3 md:px-0 py-5">
+                <div
+                  key={item.heading}
+                  className="flex md:justify-center px-3 md:px-0 py-5"
+                >
                   <div>
                     <h3 className="text-base lg:text-lg py-2 font-semibold text-theme-base-900">
                       {item.heading}
                     </h3>
                     <ul className="text-theme-base-700">
-                      {item.list.map((listItem) => (
-                        <li className="py-1 lg:py-2">
+                      {item.list.map((listItem, idx) => (
+                        <li
+                          key={`${listItem.label}_${idx}`}
+                          className="py-1 lg:py-2"
+                        >
                           <NavLink to={`/${listItem.value}`}>
                             {listItem.label}
                           </NavLink>

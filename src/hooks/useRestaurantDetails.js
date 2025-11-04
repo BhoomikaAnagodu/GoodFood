@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MENU_API_URL } from "../utils/constants";
+import RESTURANT_DETAILS_MOCK from "../utils/mock-data/restaurant-details";
 
 const useRestaurantDetails = () => {
   const { restId } = useParams();
@@ -8,15 +9,32 @@ const useRestaurantDetails = () => {
   const [showMenu, setShowMenu] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const [newCartData, setNewCartData] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
     fetchResturantData();
   }, []);
 
   const fetchResturantData = async () => {
-    const response = await fetch(MENU_API_URL + restId);
-    const data = await response.json();
-    setRestData(data?.data?.cards);
+    try {
+      const response = await fetch(MENU_API_URL + restId);
+      if (response?.status === 200) {
+        const data = await response.json();
+        setRestData(data?.data?.cards);
+      } else {
+        const data =
+          Object.values(RESTURANT_DETAILS_MOCK).find(
+            (item) => item.id === restId
+          ) || Object.values(RESTURANT_DETAILS_MOCK)[0];
+        const is_mock_data_found = Object.values(
+          RESTURANT_DETAILS_MOCK
+        ).findIndex((item) => item.id === restId);
+        setShowAlert(is_mock_data_found === -1);
+        setRestData(data?.cards);
+      }
+    } catch (err) {
+      console.log("response error--", err);
+    }
   };
 
   const restaurantName = restData?.find((list) => list?.card?.card?.text)?.card
@@ -53,6 +71,7 @@ const useRestaurantDetails = () => {
     handleCloseModal,
     handleOpenModal,
     newCartData,
+    showAlert,
   };
 };
 

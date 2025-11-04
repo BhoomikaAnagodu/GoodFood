@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 // import { API_URL } from "../utils/constants";
 import { debounce } from "../utils/utils.js";
-import { restaurant_list } from "../utils/restaurant-list.js";
+import { restaurant_list } from "../utils/mock-data/restaurant-list.js";
 
 const useRestaurantPage = () => {
   const [restList, setRestList] = useState([]);

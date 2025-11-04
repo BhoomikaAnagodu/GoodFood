@@ -34,7 +34,7 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-4 ">
             <img
               src={landingPageImage2}
-              className="rounded-3xl py-5 md:py-0 object-cover h-full"
+              className="rounded-3xl py-5 md:py-0 object-cover"
             />
             <div className="md:mx-3 lg:mx-5 py-5 md:py-0">
               <div className="font-poppins flex items-center text-theme-base-800 md:text-sm lg:text-base xl:text-xl">
