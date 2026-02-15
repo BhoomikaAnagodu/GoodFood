@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.2...v1.0.3) (2026-02-15)
+
+
+### Bug Fixes
+
+* update release.yml ([191d263](https://github.com/BhoomikaAnagodu/goodFood/commit/191d2632d9a364cbbd4396a0888d49ba4e7652b4))
+
 ## [1.0.2](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.1...v1.0.2) (2026-02-15)
 
 
