@@ -1,18 +1,18 @@
 // import Parent from "./ClassComponent/Parent.js";
-import AboutImg1 from "../../assets/Images/about_1.jpg";
-import Slide1 from "../../assets/Images/slide_1.jpg";
-import Slide2 from "../../assets/Images/slide_2.jpg";
-import Slide3 from "../../assets/Images/slide_3.jpg";
-import Slide4 from "../../assets/Images/slide_4.jpg";
-import Slide5 from "../../assets/Images/slide_5.jpg";
-import Slide6 from "../../assets/Images/slide_6.jpg";
-import Slide7 from "../../assets/Images/slide_7.jpg";
-import Slide8 from "../../assets/Images/slide_8.jpg";
-import Slide9 from "../../assets/Images/slide_9.jpg";
-import Slide10 from "../../assets/Images/slide_10.jpg";
-import Slide11 from "../../assets/Images/slide_11.jpg";
-import Slide12 from "../../assets/Images/slide_12.jpg";
-import Slide13 from "../../assets/Images/slide_13.jpg";
+import AboutImg1 from "url:../../assets/images/about_1.jpg";
+import Slide1 from "url:../../assets/images/slide_1.jpg";
+import Slide2 from "url:../../assets/images/slide_2.jpg";
+import Slide3 from "url:../../assets/images/slide_3.jpg";
+import Slide4 from "url:../../assets/images/slide_4.jpg";
+import Slide5 from "url:../../assets/images/slide_5.jpg";
+import Slide6 from "url:../../assets/images/slide_6.jpg";
+import Slide7 from "url:../../assets/images/slide_7.jpg";
+import Slide8 from "url:../../assets/images/slide_8.jpg";
+import Slide9 from "url:../../assets/images/slide_9.jpg";
+import Slide10 from "url:../../assets/images/slide_10.jpg";
+import Slide11 from "url:../../assets/images/slide_11.jpg";
+import Slide12 from "url:../../assets/images/slide_12.jpg";
+import Slide13 from "url:../../assets/images/slide_13.jpg";
 
 const About = () => {
   return (

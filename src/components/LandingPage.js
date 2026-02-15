@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import landingPageImage2 from "../../assets/Images/landingpage_img_2.jpg";
+import landingPageImage2 from "url:../../assets/images/landingpage_img_2.jpg";
 import Tick from "../../assets/icons/tick-circle.svg";
 import ArrowRightUp from "../../assets/icons/arrow-right-up.svg";
 
