@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.3...v1.0.4) (2026-02-25)
+
+
+### Bug Fixes
+
+* **image_import:** resolve image imports using import.meta URL ([562cfe4](https://github.com/BhoomikaAnagodu/goodFood/commit/562cfe40d4753b2e670905043190beb65821ef9e))
+
 ## [1.0.3](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.2...v1.0.3) (2026-02-15)
 
 
