@@ -1,4 +1,4 @@
-export const debounce = (callbackFnc, delay) => {
+export const debounce = (callbackFnc, delay = 300) => {
   let timeoutId;
 
   return function (...args) {
@@ -6,14 +6,18 @@ export const debounce = (callbackFnc, delay) => {
       clearTimeout(timeoutId);
     }
 
+    const ms = Number(delay) || 300;
     timeoutId = setTimeout(() => {
       callbackFnc(...args);
-    }, delay);
+    }, ms);
   };
 };
 
-export const scrollToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+export const scrollToTop = (behavior = "smooth") => {
+  // use a standard behavior value; default to smooth scrolling
+  window.scrollTo({ top: 0, left: 0, behavior });
 };
 
-export const isMobile = window.innerWidth < 1024;
+// Export as a function so callers get a live check on resize instead of
+// a boolean evaluated once at module import time.
+export const isMobile = () => window.matchMedia("(max-width: 1023px)").matches;

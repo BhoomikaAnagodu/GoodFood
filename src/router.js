@@ -7,8 +7,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 
 const RestaurantPage = lazy(() => import("./components/RestaurantPage"));
 const About = lazy(() => import("./components/About"));
-const RestaurantDetails = lazy(() =>
-  import("./components/RestaurantDetails/RestaurantDetails")
+const RestaurantDetails = lazy(
+  () => import("./components/RestaurantDetails/RestaurantDetails"),
 );
 
 const routes = [
@@ -34,7 +34,7 @@ const routes = [
         element: <Cart />,
       },
       {
-        path: "/resturant/:restId",
+        path: "/restaurant/:restId",
         element: (
           <Suspense fallback={<h1>Loading</h1>}>
             <RestaurantDetails />

@@ -3,13 +3,15 @@ import RatingStar from "../../assets/icons/star-in-circle.svg";
 import { IMG_CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
-  const { cloudinaryImageId, name, avgRating, sla, cuisines, areaName } =
-    resData.info;
+  const info = resData?.info || {};
+  const { cloudinaryImageId, name, avgRating, sla, cuisines, areaName } = info;
   return (
     <>
       <div>
         <img
-          src={IMG_CDN_URL + cloudinaryImageId}
+          src={cloudinaryImageId ? IMG_CDN_URL + cloudinaryImageId : ""}
+          alt={name || "restaurant image"}
+          loading="lazy"
           className="w-full h-60 rounded-xl object-cover"
         />
       </div>
@@ -25,7 +27,7 @@ const RestaurantCard = ({ resData }) => {
           <p className="font-normal ml-2"> {sla.slaString}</p>
         </div>
         <p className="opacity-60 text-sm font-light overflow-ellipsis overflow-hidden whitespace-nowrap mb-1">
-          {cuisines.toString()}
+          {Array.isArray(cuisines) ? cuisines.join() : cuisines || ""}
         </p>
         <p className="opacity-80 font-light">{areaName}</p>
       </div>

@@ -38,7 +38,7 @@ const Header = () => {
           </NavLink>
         </div>
         <div>
-          {isMobile ? (
+          {isMobile() ? (
             <div className="relative" ref={menuRef}>
               <div className="w-7 md:w-8 cursor-pointer" onClick={toggleMenu}>
                 <img src={Hamburger_Menu_Icon} alt="hamburger menu icon" />
