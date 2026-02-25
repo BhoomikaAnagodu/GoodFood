@@ -96,7 +96,7 @@
 }
 
 .landingBg {
-  background-image: url("/assets/Images/background.jpg");
+  background-image: url("/assets/images/background.jpg");
   width: 100%;
   background-size: cover;
   background-position: right 30% bottom 50%;
