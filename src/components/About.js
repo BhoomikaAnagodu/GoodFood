@@ -1,18 +1,23 @@
 // import Parent from "./ClassComponent/Parent.js";
-import AboutImg1 from "url:../../assets/images/about_1.jpg";
-import Slide1 from "url:../../assets/images/slide_1.jpg";
-import Slide2 from "url:../../assets/images/slide_2.jpg";
-import Slide3 from "url:../../assets/images/slide_3.jpg";
-import Slide4 from "url:../../assets/images/slide_4.jpg";
-import Slide5 from "url:../../assets/images/slide_5.jpg";
-import Slide6 from "url:../../assets/images/slide_6.jpg";
-import Slide7 from "url:../../assets/images/slide_7.jpg";
-import Slide8 from "url:../../assets/images/slide_8.jpg";
-import Slide9 from "url:../../assets/images/slide_9.jpg";
-import Slide10 from "url:../../assets/images/slide_10.jpg";
-import Slide11 from "url:../../assets/images/slide_11.jpg";
-import Slide12 from "url:../../assets/images/slide_12.jpg";
-import Slide13 from "url:../../assets/images/slide_13.jpg";
+const AboutImg1 = new URL("../../assets/images/about_1.jpg", import.meta.url)
+  .href;
+const Slide1 = new URL("../../assets/images/slide_1.jpg", import.meta.url).href;
+const Slide2 = new URL("../../assets/images/slide_2.jpg", import.meta.url).href;
+const Slide3 = new URL("../../assets/images/slide_3.jpg", import.meta.url).href;
+const Slide4 = new URL("../../assets/images/slide_4.jpg", import.meta.url).href;
+const Slide5 = new URL("../../assets/images/slide_5.jpg", import.meta.url).href;
+const Slide6 = new URL("../../assets/images/slide_6.jpg", import.meta.url).href;
+const Slide7 = new URL("../../assets/images/slide_7.jpg", import.meta.url).href;
+const Slide8 = new URL("../../assets/images/slide_8.jpg", import.meta.url).href;
+const Slide9 = new URL("../../assets/images/slide_9.jpg", import.meta.url).href;
+const Slide10 = new URL("../../assets/images/slide_10.jpg", import.meta.url)
+  .href;
+const Slide11 = new URL("../../assets/images/slide_11.jpg", import.meta.url)
+  .href;
+const Slide12 = new URL("../../assets/images/slide_12.jpg", import.meta.url)
+  .href;
+const Slide13 = new URL("../../assets/images/slide_13.jpg", import.meta.url)
+  .href;
 
 const About = () => {
   return (
