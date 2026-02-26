@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.4...v1.0.5) (2026-02-26)
+
+
+### Bug Fixes
+
+* upgrade tar dependency ([a6b37ae](https://github.com/BhoomikaAnagodu/goodFood/commit/a6b37aea8fb708c9541ef5c2c8288d605408b7d7))
+
 ## [1.0.4](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.3...v1.0.4) (2026-02-25)
 
 
