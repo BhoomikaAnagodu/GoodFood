@@ -22,7 +22,12 @@ const RestaurantDetails = () => {
   } = useRestaurantDetails();
 
   const { items } = useSelector((store) => store.cart);
-  const { dispatcherFn } = useAddToCart({
+  const {
+    handleAddItemToCart,
+    handleIncrementItemQuantity,
+    handleDecrementItemQuantity,
+    handleRefreshCart,
+  } = useAddToCart({
     restDetails: {
       name: restaurantPopupCardData?.name,
       areaName: restaurantPopupCardData?.areaName,
@@ -32,6 +37,13 @@ const RestaurantDetails = () => {
     handleCloseModal,
     newCartData,
   });
+
+  const dispatcherFn = {
+    handleAddItemtoCart: handleAddItemToCart,
+    handleIncrementItemQuantity,
+    handleDecrementItemQuantity,
+    handleRefreshCart,
+  };
 
   return (
     <div className="w-1/2 mx-auto my-5 relative">
@@ -81,7 +93,7 @@ const RestaurantDetails = () => {
                   </button>
                   <button
                     className="btn w-1/2 text-sm uppercase bg-theme-green text-white hover:shadow-xl"
-                    onClick={dispatcherFn?.handleRefreshCart}
+                    onClick={handleRefreshCart}
                   >
                     Yes, Start Afresh
                   </button>

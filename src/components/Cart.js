@@ -4,18 +4,21 @@ import { IMG_CDN_URL } from "../utils/constants";
 import Empty_Cart from "../../assets/icons/empty-cart.svg";
 import BulletIcon from "../../assets/icons/dot-square.svg";
 import Info from "../../assets/icons/info.svg";
-import { decrementItemQuanity, incrementItemQuanity } from "../store/cartSlice";
+import {
+  decrementItemQuantity,
+  incrementItemQuantity,
+} from "../store/cartSlice";
 
 const Cart = () => {
   const { items, restaurantDetails } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
   const handleIncrementItemQuantity = (data) => {
-    dispatch(incrementItemQuanity(data));
+    dispatch(incrementItemQuantity(data));
   };
 
   const handleDecrementItemQuantity = (data) => {
-    dispatch(decrementItemQuanity(data));
+    dispatch(decrementItemQuantity(data));
   };
 
   const extractItemPrice = (item) => {
@@ -25,15 +28,15 @@ const Cart = () => {
       (item?.variantsV2?.pricingModels?.length &&
         Math.min(
           ...item?.variantsV2?.pricingModels?.map(
-            (priceModel) => priceModel.price
-          )
+            (priceModel) => priceModel.price,
+          ),
         ))
     );
   };
 
   const itemTotal = items.reduce(
     (acc, item) => acc + (extractItemPrice(item) * item.quantity) / 100,
-    0
+    0,
   );
 
   return (
@@ -59,7 +62,7 @@ const Cart = () => {
               <ul className="my-5">
                 {items.map((item) => {
                   return (
-                    <li className="flex items-center my-2">
+                    <li key={item.id} className="flex items-center my-2">
                       <div className="flex basis-2/4">
                         <BulletIcon className="max-w-[20px]! max-h-[20px]! mt-0.5" />
                         <p className="px-2 flex-wrap">{item.name}</p>
@@ -96,32 +99,34 @@ const Cart = () => {
               <div className="my-3">
                 <p className="font-semibold">Bill Details</p>
                 <table className="w-full">
-                  <tr>
-                    <td className="py-2">Item Total</td>
-                    <td className="text-end">&#8377;{itemTotal}</td>
-                  </tr>
-                  <tr className="border-b-2 border-b-theme-base-800">
-                    <td className="flex pb-4 items-center">
-                      Delivery Fee | 1.3 kms{" "}
-                      <div className="tooltip-div relative cursor-pointer">
-                        <Info className="w-5 h-5 mx-2 " />
-                        <div className="w-[260px] tooltip bottom-6 inline-block px-3 py-2 text-xs font-medium transition-opacity duration-300 rounded-lg shadow-sm ">
-                          <p>Delivery Fee breakup for this order</p>
-                          <div className="flex justify-between">
-                            <p>Standard Fee</p>
-                            <p>&#8377;50</p>
+                  <tbody>
+                    <tr>
+                      <td className="py-2">Item Total</td>
+                      <td className="text-end">&#8377;{itemTotal}</td>
+                    </tr>
+                    <tr className="border-b-2 border-b-theme-base-800">
+                      <td className="flex pb-4 items-center">
+                        Delivery Fee | 1.3 kms{" "}
+                        <div className="tooltip-div relative cursor-pointer">
+                          <Info className="w-5 h-5 mx-2 " />
+                          <div className="w-[260px] tooltip bottom-6 inline-block px-3 py-2 text-xs font-medium transition-opacity duration-300 rounded-lg shadow-sm ">
+                            <p>Delivery Fee breakup for this order</p>
+                            <div className="flex justify-between">
+                              <p>Standard Fee</p>
+                              <p>&#8377;50</p>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </td>
-                    <td className="text-end">&#8377;50</td>
-                  </tr>
-                  <tr>
-                    <td className="py-3 font-semibold">TO PAY</td>
-                    <td className="text-end font-semibold">
-                      &#8377;{itemTotal + 50}
-                    </td>
-                  </tr>
+                      </td>
+                      <td className="text-end">&#8377;50</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 font-semibold">TO PAY</td>
+                      <td className="text-end font-semibold">
+                        &#8377;{itemTotal + 50}
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               </div>
             </div>

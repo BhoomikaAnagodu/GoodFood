@@ -1,9 +1,10 @@
+import React, { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addItem,
   clearCart,
-  decrementItemQuanity,
-  incrementItemQuanity,
+  decrementItemQuantity,
+  incrementItemQuantity,
 } from "../store/cartSlice";
 
 const useAddToCart = ({
@@ -15,39 +16,48 @@ const useAddToCart = ({
   const dispatch = useDispatch();
   const { items, restaurantDetails } = useSelector((store) => store.cart);
 
-  const handleAddItemtoCart = (data) => {
-    if (items.length) {
-      if (restaurantDetails?.name === restDetails?.name) {
-        dispatch(addItem({ item: data, restData: restDetails }));
+  const handleAddItemToCart = useCallback(
+    (data) => {
+      if (items.length) {
+        if (restaurantDetails?.name === restDetails?.name) {
+          dispatch(addItem({ item: data, restData: restDetails }));
+        } else {
+          handleOpenModal(data);
+        }
       } else {
-        handleOpenModal(data);
+        dispatch(addItem({ item: data, restData: restDetails }));
       }
-    } else {
-      dispatch(addItem({ item: data, restData: restDetails }));
+    },
+    [dispatch, items, restaurantDetails, restDetails, handleOpenModal]
+  );
+
+  const handleIncrementItemQuantity = useCallback(
+    (data) => dispatch(incrementItemQuantity(data)),
+    [dispatch]
+  );
+
+  const handleDecrementItemQuantity = useCallback(
+    (data) => dispatch(decrementItemQuantity(data)),
+    [dispatch]
+  );
+
+  const handleRefreshCart = useCallback(() => {
+    // validate newCartData shape before replacing cart
+    if (!newCartData || typeof newCartData !== "object" || !newCartData.id) {
+      console.warn("handleRefreshCart: invalid newCartData, aborting refresh", newCartData);
+      return;
     }
-  };
 
-  const handleIncrementItemQuantity = (data) => {
-    dispatch(incrementItemQuanity(data));
-  };
-
-  const handleDecrementItemQuantity = (data) => {
-    dispatch(decrementItemQuanity(data));
-  };
-
-  const handleRefreshCart = () => {
     dispatch(clearCart());
     dispatch(addItem({ item: newCartData, restData: restDetails }));
-    handleCloseModal();
-  };
+    if (typeof handleCloseModal === "function") handleCloseModal();
+  }, [dispatch, newCartData, restDetails, handleCloseModal]);
 
   return {
-    dispatcherFn: {
-      handleAddItemtoCart: handleAddItemtoCart,
-      handleIncrementItemQuantity: handleIncrementItemQuantity,
-      handleDecrementItemQuantity: handleDecrementItemQuantity,
-      handleRefreshCart: handleRefreshCart,
-    },
+    handleAddItemToCart,
+    handleIncrementItemQuantity,
+    handleDecrementItemQuantity,
+    handleRefreshCart,
   };
 };
 

@@ -66,7 +66,7 @@ const RestaurantPage = () => {
                 {cardList?.length > 0 &&
                   cardList?.map((data) => (
                     <NavLink
-                      to={`/resturant/${data.info.id}`}
+                      to={`/restaurant/${data.info.id}`}
                       className="cursor-pointer transition-primary hover:scale-95"
                       key={data.info.id}
                     >

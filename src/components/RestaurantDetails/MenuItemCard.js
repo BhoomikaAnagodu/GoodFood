@@ -29,7 +29,7 @@ const MenuItemCard = ({ data, style, dispatcherFn }) => {
   const comboPrize =
     variantsV2?.pricingModels?.length &&
     Math.min(
-      ...variantsV2?.pricingModels?.map((priceModel) => priceModel.price)
+      ...variantsV2?.pricingModels?.map((priceModel) => priceModel.price),
     );
 
   return (
