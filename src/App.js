@@ -7,7 +7,7 @@ import { appRouter } from "./router";
 const heading = React.createElement(
   "h1",
   { id: "heading" },
-  "Namaste React 🚀"
+  "Namaste React 🚀",
 );
 // console.log(heading);
 
@@ -49,9 +49,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
  *    - Cart
  * Body
  *  - RestaurantContainer
- *    - ResturantCard
+ *  - RestaurantCard
  *      - Img
- *      - Resturant Details - Name, Location, Cuisine, Delivery Time, Ratings
+ *      - Restaurant Details - Name, Location, Cuisine, Delivery Time, Ratings
  * Footer
  *  - Copywrite disclaimers
  *  - About
@@ -61,5 +61,5 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <RouterProvider router={appRouter} />
-  </StrictMode>
+  </StrictMode>,
 );

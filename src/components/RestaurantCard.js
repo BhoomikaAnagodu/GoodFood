@@ -21,13 +21,13 @@ const RestaurantCard = ({ resData }) => {
         </p>
         <div className="flex text-sm">
           <p className="flex items-center font-light">
-            <RatingStar className="w-5 h-5" />
+            <RatingStar className="w-5 h-5" aria-hidden="true" />
             <span>{avgRating} •</span>
           </p>
           <p className="font-normal ml-2"> {sla.slaString}</p>
         </div>
         <p className="opacity-60 text-sm font-light overflow-ellipsis overflow-hidden whitespace-nowrap mb-1">
-          {Array.isArray(cuisines) ? cuisines.join() : cuisines || ""}
+          {Array.isArray(cuisines) ? cuisines.join(", ") : cuisines || ""}
         </p>
         <p className="opacity-80 font-light">{areaName}</p>
       </div>
@@ -35,4 +35,4 @@ const RestaurantCard = ({ resData }) => {
   );
 };
 
-export default RestaurantCard;
+export default React.memo(RestaurantCard);

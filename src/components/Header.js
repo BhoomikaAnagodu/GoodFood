@@ -27,78 +27,91 @@ const Header = () => {
     >
       <div className="main-container mx-auto flex justify-between h-15 lg:h-20 items-center">
         <div>
-          <NavLink to="/">
-            <div className="flex items-center ">
-              <LOGO className="w-8 h-8 lg:w-12 lg:h-12 cursor-pointer" />
+          <nav aria-label="Main navigation">
+            <NavLink to="/" className="flex items-center">
+              <LOGO
+                className="w-8 h-8 lg:w-12 lg:h-12 cursor-pointer"
+                role="img"
+                aria-label="GoodFood logo"
+              />
               <h3 className="text-base md:text-lg xl:text-xl mx-1 font-semibold text-stone-900">
                 Good
                 <span className="ml-0.5 font-bold text-theme-orange">Food</span>
               </h3>
-            </div>
-          </NavLink>
+            </NavLink>
+          </nav>
         </div>
         <div>
           {isMobile() ? (
             <div className="relative" ref={menuRef}>
-              <div className="w-7 md:w-8 cursor-pointer" onClick={toggleMenu}>
-                <img src={Hamburger_Menu_Icon} alt="hamburger menu icon" />
-              </div>
+              <button
+                type="button"
+                aria-label={openMenu ? "Close menu" : "Open menu"}
+                className="w-7 md:w-8"
+                onClick={toggleMenu}
+              >
+                <img src={Hamburger_Menu_Icon} alt="Menu" />
+              </button>
               {openMenu && (
                 <ul className="absolute right-0 bg-stone-100 shadow-menu rounded-xl w-fit overflow-hidden xxs:my-4 xs:my-4 md:my-6 z-[1100] p-2">
                   {NAV_ITEMS.map((item) => (
-                    <NavLink
-                      to={`/${item.value}`}
-                      key={item.label}
-                      className="menu-link cursor-pointer"
-                    >
-                      {({ isActive }) => (
-                        <p
-                          className={`${
-                            isActive
-                              ? "border-l-2 border-theme-orange text-theme-orange"
-                              : ""
-                          } px-2`}
-                        >
-                          {item.label}
-                        </p>
-                      )}
-                    </NavLink>
+                    <li key={item.label}>
+                      <NavLink
+                        to={`/${item.value}`}
+                        className="menu-link block px-2"
+                      >
+                        {({ isActive }) => (
+                          <span
+                            className={`${
+                              isActive
+                                ? "border-l-2 border-theme-orange text-theme-orange"
+                                : ""
+                            }`}
+                          >
+                            {item.label}
+                          </span>
+                        )}
+                      </NavLink>
+                    </li>
                   ))}
                 </ul>
               )}
             </div>
           ) : (
             <div className="mr-10">
-              <ul className="hidden md:visible md:flex items-center list-none">
-                {NAV_ITEMS.map((item) => (
-                  <NavLink
-                    to={`/${item.value}`}
-                    key={item.label}
-                    className={({ isActive }) =>
-                      [
-                        isActive
-                          ? ""
-                          : "hover:scale-108 transform duration-400 ease-in",
-                        "grid cursor-pointer px-4",
-                      ].join(" ")
-                    }
-                  >
-                    {({ isActive }) => (
-                      <div className="relative">
-                        <p className="text-lg">{item.label}</p>
-                        {isActive && (
-                          <span className="w-2/5 border-b-2 border-b-theme-orange"></span>
+              <nav aria-label="Primary navigation">
+                <ul className="hidden md:visible md:flex items-center list-none">
+                  {NAV_ITEMS.map((item) => (
+                    <li key={item.label} className="px-2">
+                      <NavLink
+                        to={`/${item.value}`}
+                        className={({ isActive }) =>
+                          [
+                            isActive
+                              ? ""
+                              : "hover:scale-108 transform duration-400 ease-in",
+                            "grid cursor-pointer px-4",
+                          ].join(" ")
+                        }
+                      >
+                        {({ isActive }) => (
+                          <div className="relative">
+                            <span className="text-lg">{item.label}</span>
+                            {isActive && (
+                              <span className="w-2/5 border-b-2 border-b-theme-orange"></span>
+                            )}
+                            {item.label === "Cart" && cartItemsCount > 0 && (
+                              <span className="text-sm absolute top-[-5] right-[-20] opacity-90 bg-theme-orange text-theme-base-50 px-2 py-0.5 rounded-full">
+                                {cartItemsCount}
+                              </span>
+                            )}
+                          </div>
                         )}
-                        {item.label === "Cart" && cartItemsCount > 0 && (
-                          <span className="text-sm absolute top-[-5] right-[-20] opacity-90 bg-theme-orange text-theme-base-50 px-2 py-0.5 rounded-full">
-                            {cartItemsCount}
-                          </span>
-                        )}
-                      </div>
-                    )}
-                  </NavLink>
-                ))}
-              </ul>
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           )}
         </div>

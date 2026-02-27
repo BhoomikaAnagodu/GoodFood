@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { MENU_API_URL } from "../utils/constants";
-import RESTURANT_DETAILS_MOCK from "../utils/mock-data/restaurant-details";
+import RESTAURANT_DETAILS_MOCK from "../utils/mock-data/restaurant-details";
 
 const useRestaurantDetails = () => {
   const { restId } = useParams();
@@ -12,10 +12,10 @@ const useRestaurantDetails = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   useEffect(() => {
-    fetchResturantData();
+    fetchRestaurantData();
   }, []);
 
-  const fetchResturantData = async () => {
+  const fetchRestaurantData = async () => {
     try {
       const response = await fetch(MENU_API_URL + restId);
       if (response?.status === 200) {
@@ -25,11 +25,11 @@ const useRestaurantDetails = () => {
         }, 1000);
       } else {
         const data =
-          Object.values(RESTURANT_DETAILS_MOCK).find(
-            (item) => item.id === restId
-          ) || Object.values(RESTURANT_DETAILS_MOCK)[0];
+          Object.values(RESTAURANT_DETAILS_MOCK).find(
+            (item) => item.id === restId,
+          ) || Object.values(RESTAURANT_DETAILS_MOCK)[0];
         const is_mock_data_found = Object.values(
-          RESTURANT_DETAILS_MOCK
+          RESTAURANT_DETAILS_MOCK,
         ).findIndex((item) => item.id === restId);
         setTimeout(() => {
           setShowAlert(is_mock_data_found === -1);
@@ -45,13 +45,13 @@ const useRestaurantDetails = () => {
     ?.card?.text;
 
   const restaurantPopupCardData = restData?.find(
-    (list) => list?.card?.card?.info
+    (list) => list?.card?.card?.info,
   )?.card?.card?.info;
 
   const restaurantMenu = restData
     ?.find((list) => list?.groupedCard?.cardGroupMap)
     ?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((menuList) =>
-      menuList?.card?.card?.["@type"].includes("ItemCategory")
+      menuList?.card?.card?.["@type"].includes("ItemCategory"),
     );
 
   const handleCloseModal = () => {

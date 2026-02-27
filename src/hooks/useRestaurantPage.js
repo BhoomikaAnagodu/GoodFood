@@ -20,15 +20,15 @@ const useRestaurantPage = () => {
   const fetchData = async () => {
     // const response = await fetch(API_URL);
     // const result = await response.json();
-    // const resturantsList = result?.data?.cards.find(
-    //   (list) => list?.card?.card?.id === "restaurant_grid_listing_v2"
-    // );
-    // setRestList(
-    //   resturantsList?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
-    // setFilteredRestList(
-    //   resturantsList?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
+    // const restaurantsList = result?.data?.cards.find(
++    //   (list) => list?.card?.card?.id === "restaurant_grid_listing_v2"
++    // );
++    // setRestList(
++    //   restaurantsList?.card?.card?.gridElements?.infoWithStyle?.restaurants
++    // );
++    // setFilteredRestList(
++    //   restaurantsList?.card?.card?.gridElements?.infoWithStyle?.restaurants
++    // );
     // setNextOffset(result?.data?.pageOffset?.nextOffset);
     setTimeout(() => {
       setRestList(restaurant_list.slice(0, itemsPerPage));

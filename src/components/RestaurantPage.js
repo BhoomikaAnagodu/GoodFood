@@ -53,10 +53,10 @@ const RestaurantPage = () => {
                   </div>
                   <button
                     className="btn-primary"
-                    data-automation-id="top-resturants-btn"
+                    data-automation-id="top-restaurants-btn"
                     onClick={handleFilterTopRestaurants}
                   >
-                    Top Resturants
+                    Top Restaurants
                   </button>
                 </div>
               </div>
