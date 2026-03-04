@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.5...v1.1.0) (2026-03-04)
+
+
+### Features
+
+* add unit tests for Header, Cart, useHeader, and cartSlice ([91126c8](https://github.com/BhoomikaAnagodu/goodFood/commit/91126c8bfa22f8cdf883cfdbc7f4617526a5419b))
+
 ## [1.0.5](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.4...v1.0.5) (2026-02-26)
 
 
