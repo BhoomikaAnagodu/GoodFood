@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { HEADER_SCROLL_THRESHOLD, HEADER_SCROLL_CAPTURE } from "../utils/constants";
+import {
+  HEADER_SCROLL_THRESHOLD,
+  HEADER_SCROLL_CAPTURE,
+} from "../utils/constants";
 import { getScrollTop } from "../utils/utils";
 
 export const useHeader = () => {
@@ -57,7 +60,11 @@ export const useHeader = () => {
   useEffect(() => {
     window.addEventListener("scroll", changeHeaderColor, HEADER_SCROLL_CAPTURE);
     return () => {
-      window.removeEventListener("scroll", changeHeaderColor, HEADER_SCROLL_CAPTURE);
+      window.removeEventListener(
+        "scroll",
+        changeHeaderColor,
+        HEADER_SCROLL_CAPTURE,
+      );
     };
   }, [location]);
 

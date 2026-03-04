@@ -17,6 +17,7 @@ const Header = () => {
 
   return (
     <header
+      data-testid="header"
       className={`fixed z-110 top-0 left-0 right-0 h-15 lg:h-20 ${
         location?.pathname === "/"
           ? headerColor
@@ -46,6 +47,7 @@ const Header = () => {
             <div className="relative" ref={menuRef}>
               <button
                 type="button"
+                data-testid="toggle-btn"
                 aria-label={openMenu ? "Close menu" : "Open menu"}
                 className="w-7 md:w-8"
                 onClick={toggleMenu}
@@ -53,7 +55,10 @@ const Header = () => {
                 <img src={Hamburger_Menu_Icon} alt="Menu" />
               </button>
               {openMenu && (
-                <ul className="absolute right-0 bg-stone-100 shadow-menu rounded-xl w-fit overflow-hidden xxs:my-4 xs:my-4 md:my-6 z-[1100] p-2">
+                <ul
+                  data-testid="menu-el"
+                  className="absolute right-0 bg-stone-100 shadow-menu rounded-xl w-fit overflow-hidden xxs:my-4 xs:my-4 md:my-6 z-[1100] p-2"
+                >
                   {NAV_ITEMS.map((item) => (
                     <li key={item.label}>
                       <NavLink
@@ -101,7 +106,10 @@ const Header = () => {
                               <span className="w-2/5 border-b-2 border-b-theme-orange"></span>
                             )}
                             {item.label === "Cart" && cartItemsCount > 0 && (
-                              <span className="text-sm absolute top-[-5] right-[-20] opacity-90 bg-theme-orange text-theme-base-50 px-2 py-0.5 rounded-full">
+                              <span
+                                data-testid="cart-count"
+                                className="text-sm absolute top-[-5] right-[-20] opacity-90 bg-theme-orange text-theme-base-50 px-2 py-0.5 rounded-full"
+                              >
                                 {cartItemsCount}
                               </span>
                             )}
