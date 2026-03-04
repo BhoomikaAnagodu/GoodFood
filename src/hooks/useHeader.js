@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { HEADER_SCROLL_THRESHOLD, HEADER_SCROLL_CAPTURE } from "../utils/constants";
+import { getScrollTop } from "../utils/utils";
 
 export const useHeader = () => {
   // Subscribing to the store using a Selector
@@ -9,15 +11,22 @@ export const useHeader = () => {
     return accumulator + currentValue.quantity;
   }, 0);
   const location = useLocation();
-  const [headerColor, setHeaderColor] = useState(null);
+  const getInitialHeaderColor = () => {
+    if (typeof document === "undefined") return null;
+    const scrollTop = getScrollTop();
+    if (scrollTop <= HEADER_SCROLL_THRESHOLD && location?.pathname === "/") {
+      return false;
+    }
+    return true;
+  };
+
+  const [headerColor, setHeaderColor] = useState(getInitialHeaderColor);
   const [openMenu, setOpenMenu] = useState(false);
   const menuRef = useRef(null);
 
   const changeHeaderColor = () => {
-    if (
-      document.scrollingElement.scrollTop <= 50 &&
-      location?.pathname === "/"
-    ) {
+    const scrollTop = getScrollTop();
+    if (scrollTop <= HEADER_SCROLL_THRESHOLD && location?.pathname === "/") {
       setHeaderColor(false);
     } else {
       setHeaderColor(true);
@@ -46,11 +55,11 @@ export const useHeader = () => {
   }, [openMenu]);
 
   useEffect(() => {
-    window.addEventListener("scroll", changeHeaderColor, true);
+    window.addEventListener("scroll", changeHeaderColor, HEADER_SCROLL_CAPTURE);
     return () => {
-      window.removeEventListener("scroll", changeHeaderColor);
+      window.removeEventListener("scroll", changeHeaderColor, HEADER_SCROLL_CAPTURE);
     };
-  }, []);
+  }, [location]);
 
   return {
     cartItemsCount,

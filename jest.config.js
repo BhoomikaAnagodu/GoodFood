@@ -19,6 +19,8 @@ const config = {
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
+  // Use V8 coverage provider to avoid babel-plugin-istanbul issues in this environment
+  coverageProvider: "v8",
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,

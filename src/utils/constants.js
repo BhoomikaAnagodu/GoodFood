@@ -1,6 +1,10 @@
 export const IMG_CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
+// Header behaviour constants
+export const HEADER_SCROLL_THRESHOLD = 50;
+export const HEADER_SCROLL_CAPTURE = true;
+
 export const API_URL =
   "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 

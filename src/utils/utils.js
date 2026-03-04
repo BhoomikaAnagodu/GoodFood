@@ -21,3 +21,14 @@ export const scrollToTop = (behavior = "smooth") => {
 // Export as a function so callers get a live check on resize instead of
 // a boolean evaluated once at module import time.
 export const isMobile = () => window.matchMedia("(max-width: 1023px)").matches;
+
+// Return current vertical scroll position with safe fallbacks for different environments
+export const getScrollTop = () => {
+  if (typeof document === "undefined") return 0;
+  return (
+    (document.scrollingElement && document.scrollingElement.scrollTop) ||
+    document.documentElement.scrollTop ||
+    window.pageYOffset ||
+    0
+  );
+};
