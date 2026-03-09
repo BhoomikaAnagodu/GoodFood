@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.1.0...v1.2.0) (2026-03-09)
+
+
+### Features
+
+* add unit tests for RestaurantPage component ([948700b](https://github.com/BhoomikaAnagodu/goodFood/commit/948700ba2ce92a1713bdff27b5e852e5cf7336a8))
+
 # [1.1.0](https://github.com/BhoomikaAnagodu/goodFood/compare/v1.0.5...v1.1.0) (2026-03-04)
 
 
